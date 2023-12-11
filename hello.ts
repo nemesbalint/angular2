@@ -21,13 +21,19 @@ class Greeter {
         {name: "compile", point: 10}
     ];
 
-    constructor(nameObj: name) {
+    readonly skill: string;
+    constructor(nameObj: name, skill: string = "programming") {
         this.fullName = `${nameObj.firstName} ${nameObj.lastName}`;
+        this.skill = skill;
     } 
     greet() {
         return `Hello, my name is ${this.fullName}.`;
     }
 }
 
-let g: Greeter = new Greeter({firstName: 'Bálint', lastName:'Nemes'});
+//g.skill = "compile"; 
+//Ez így már nem jó, mert readonly!
+let g: Greeter = new Greeter(
+    {firstName: 'Bálint', lastName:'Nemes'},
+    "build");
 document.body.innerHTML = g.greet();
