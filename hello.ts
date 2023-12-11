@@ -39,7 +39,13 @@ class Greeter {
 //Ez így nem jó, mert nincs number típusú értéke! De Stringgel már jó:
 let nameParam: name = {firstName: 'Bálint', lastName:'Nemes', age: "22"};
 
-let g: Greeter = new Greeter(
-    ,
-    "build");
-document.body.innerHTML = g.greet();
+function printGreeting(nameParam: name) {
+    let g: Greeter = new Greeter(
+        nameParam,
+        "build"
+    );
+   
+    document.body.innerHTML = g.greet();
+}
+
+printGreeting(nameParam);

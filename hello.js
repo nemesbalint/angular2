@@ -22,5 +22,13 @@ var Greeter = /** @class */ (function () {
     };
     return Greeter;
 }());
-var g = new Greeter({ firstName: 'Bálint', lastName: 'Nemes' }, "build");
-document.body.innerHTML = g.greet();
+//g.skill = "compile"; 
+//Ez így már nem jó, mert readonly!
+//let nameParam: name = {firstName: 'Bálint', lastName:'Nemes', age: 22};
+//Ez így nem jó, mert nincs number típusú értéke! De Stringgel már jó:
+var nameParam = { firstName: 'Bálint', lastName: 'Nemes', age: "22" };
+function printGreeting(nameParam) {
+    var g = new Greeter(nameParam, "build");
+    document.body.innerHTML = g.greet();
+}
+printGreeting(nameParam);
