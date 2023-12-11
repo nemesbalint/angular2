@@ -1,3 +1,8 @@
+interface name {
+    firstName: string;
+    lastName: string;
+}
+
 class Greeter {
     fullName: string = "";
     
@@ -16,13 +21,13 @@ class Greeter {
         {name: "compile", point: 10}
     ];
 
-    constructor(firstName: string, lastName: string) {
-        this.fullName = `${firstName} ${lastName}`;
+    constructor(nameObj: name) {
+        this.fullName = `${nameObj.firstName} ${nameObj.lastName}`;
     } 
     greet() {
         return `Hello, my name is ${this.fullName}.`;
     }
 }
 
-let g: Greeter = new Greeter('Bálint', 'Nemes');
+let g: Greeter = new Greeter({firstName: 'Bálint', lastName:'Nemes'});
 document.body.innerHTML = g.greet();
