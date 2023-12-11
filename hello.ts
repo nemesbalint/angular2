@@ -1,6 +1,7 @@
 interface name {
     firstName: string;
     lastName: string;
+    [propName: string]: string;
 }
 
 class Greeter {
@@ -33,7 +34,12 @@ class Greeter {
 
 //g.skill = "compile"; 
 //Ez így már nem jó, mert readonly!
+
+//let nameParam: name = {firstName: 'Bálint', lastName:'Nemes', age: 22};
+//Ez így nem jó, mert nincs number típusú értéke! De Stringgel már jó:
+let nameParam: name = {firstName: 'Bálint', lastName:'Nemes', age: "22"};
+
 let g: Greeter = new Greeter(
-    {firstName: 'Bálint', lastName:'Nemes'},
+    ,
     "build");
 document.body.innerHTML = g.greet();
