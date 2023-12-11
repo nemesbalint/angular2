@@ -4,6 +4,10 @@ interface name {
     [propName: string]: string;
 }
 
+interface printFn {
+    (nameParam: name):void;
+}
+
 class Greeter {
     fullName: string = "";
     
@@ -39,7 +43,7 @@ class Greeter {
 //Ez így nem jó, mert nincs number típusú értéke! De Stringgel már jó:
 let nameParam: name = {firstName: 'Bálint', lastName:'Nemes', age: "22"};
 
-function printGreeting(nameParam: name) {
+const printGreeting: printFn = function (nameParam) {
     let g: Greeter = new Greeter(
         nameParam,
         "build"
