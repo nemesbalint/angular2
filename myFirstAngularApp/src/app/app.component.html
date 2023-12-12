@@ -227,8 +227,18 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+      
+      <h2>List of Heros</h2>
+      <ul>
+        <li *ngFor="let hero of listObservable | async">
+          <button (click)="setHero(hero)" class="btn btn-info">
+            {{ hero.name }}
+          </button>
+        </li>
+      </ul>
+      
       <h2>Hero details</h2>
-      <app-hero-detail [hero]="myHero"></app-hero-detail>
+      <app-hero-detail *ngIf="myHero" [hero]="myHero"></app-hero-detail>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

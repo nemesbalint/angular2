@@ -11,18 +11,20 @@ import { HeroService } from './service/hero.service';
 })
 export class AppComponent {
   title = 'myFirst (awsome) AngularApp';
-  myHero: Hero = {
-    name: "Magneto",
-    address: "New York",
-    superpower: "magnetic"
-  };
   
-  // listObservable: Observable<any>;
+  myHero: Hero = new Hero;
+  
+  listObservable: Observable<any>;
 
   constructor(
     private fService: FootballService,
     private hService: HeroService
   ) {
+
+    this.listObservable = this.hService.getAll();
+
+    //Angular async - a beépített async pipe használata miatt kommentelve
+    /*
     this.hService.getAll().forEach(value => {
       console.log("All hero: ", value);
     });
@@ -45,25 +47,32 @@ export class AppComponent {
       .forEach(value => {
         console.log("Remove hero: ", value);
     });
+    */
+    
+    //Angular CRUD - alapvető adatműveletek (gyakorlat) miatt kommentelve
+    /*     
+      this.listObservable = new Observable( observer => {
 
-    // this.listObservable = new Observable( observer => {
+      let to = setTimeout( () => {
+        observer.next("I am arrived...");
+      }, 15000);
 
-    //   let to = setTimeout( () => {
-    //     observer.next("I am arrived...");
-    //   }, 15000);
+      let to2 = setTimeout( () => {
+        observer.complete();
+      }, 15000);
 
-    //   let to2 = setTimeout( () => {
-    //     observer.complete();
-    //   }, 15000);
+    });
 
-    // });
+    this.listObservable.subscribe({
+      next: value => console.log(value),
+      error: error => console.error(error),
+      complete: () => console.log("Complete")
+    });
+ */     
+  }  
 
-    // this.listObservable.subscribe({
-    //   next: value => console.log(value),
-    //   error: error => console.error(error),
-    //   complete: () => console.log("Complete")
-    // });
-     
+  setHero(hero : Hero) {
+    this.myHero = hero;
   }
 
 }
