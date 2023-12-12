@@ -33,11 +33,12 @@ export class AppComponent {
 
     });
 
-    this.listObservable.subscribe(
-      value => console.log(value),
-      error => console.error(),
-      () => console.log("Complete")
-    );
+    this.listObservable.subscribe({
+      next: value => console.log(value),
+      error: error => console.error(error),
+      complete: () => console.log("Complete")
+    });
+     
   }
 
 }
