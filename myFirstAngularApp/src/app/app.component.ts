@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from './model/hero';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,28 @@ export class AppComponent {
     name: "Magneto",
     address: "New York",
     superpower: "magnetic"
+  };
+  
+  listObservable: Observable<any>;
+
+  constructor() {
+    this.listObservable = new Observable( observer => {
+
+      let to = setTimeout( () => {
+        observer.next("I am arrived...");
+      }, 15000);
+
+      let to2 = setTimeout( () => {
+        observer.complete();
+      }, 15000);
+
+    });
+
+    this.listObservable.subscribe(
+      value => console.log(value),
+      error => console.error(),
+      () => console.log("Complete")
+    );
   }
+
 }
