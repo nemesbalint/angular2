@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { PrefixPipe } from './pipe/prefix.pipe';
 import { DelayDirective } from './directive/delay.directive';
 import { HighlightDirective } from './directive/highlight.directive';
+import { FootballService } from './service/football.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { HighlightDirective } from './directive/highlight.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [FootballService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

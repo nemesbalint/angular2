@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Hero } from './model/hero';
 import { Observable } from 'rxjs';
+import { FootballService } from './service/football.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,9 @@ export class AppComponent {
   
   listObservable: Observable<any>;
 
-  constructor() {
+  constructor(
+    private fService: FootballService
+  ) {
     this.listObservable = new Observable( observer => {
 
       let to = setTimeout( () => {
