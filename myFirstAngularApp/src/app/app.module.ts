@@ -25,6 +25,10 @@ const appRoutes: Routes = [
     component: HeroComponent
   },
   {
+    path: "hero/:id",
+    component: HeroDetailComponent
+  },
+  {
     path: "**",
     component: HeroComponent
   }
