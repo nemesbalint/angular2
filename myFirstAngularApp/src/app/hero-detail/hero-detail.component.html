@@ -1,11 +1,11 @@
 <ul>
     <li>
-        <p>{{ hero.name | prefix:'Herr.' }}</p>
+        <p *appDelay="5000">{{ hero.name | prefix:'Herr.' }}</p>
     </li>
     <li>
-        <p>{{ hero.address }}</p>
+        <p *appDelay="7500">{{ hero.address }}</p>
     </li>
     <li>
-        <p>{{ hero.superpower }}</p>
+        <p *appDelay="10000">{{ hero.superpower }}</p>
     </li>
 </ul>
