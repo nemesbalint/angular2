@@ -11,8 +11,8 @@ export class FootballService {
   constructor(private http: HttpClient) { 
     this.http.get(this.jsonUrl).subscribe({
       next: () => console.log("football list"),
-      error: (error: any) => console.error(error),
-      complete() {console.log("complete")},
+      error: error => console.error(error),
+      complete: () => console.log("complete"),
     });
   }
 }
