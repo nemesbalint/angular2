@@ -1,4 +1,5 @@
 export class QuestionBase<T> {
+[x: string]: any;
     value!: T;
     key!: string;
     label!: string;
