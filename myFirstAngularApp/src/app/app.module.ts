@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { HeroComponent } from './hero/hero.component';
 import { NavComponent } from './nav/nav.component';
 import { AddHeroComponent } from './add-hero/add-hero.component';
+import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
 
 const appRoutes: Routes = [
   {
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
     HomeComponent,
     HeroComponent,
     NavComponent,
-    AddHeroComponent
+    AddHeroComponent,
+    DynamicFormQuestionComponent
   ],
   imports: [
     BrowserModule,
