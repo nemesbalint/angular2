@@ -17,6 +17,8 @@ import { HeroComponent } from './hero/hero.component';
 import { NavComponent } from './nav/nav.component';
 import { AddHeroComponent } from './add-hero/add-hero.component';
 import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
+import { QuestionComponent } from './question/question.component';
+import { QuestionControlService } from './qform/question-control-service';
 
 const appRoutes: Routes = [
   {
@@ -36,6 +38,10 @@ const appRoutes: Routes = [
     component: HeroDetailComponent
   },
   {
+    path: "questions",
+    component: QuestionComponent
+  },
+  {
     path: "**",
     component: HeroComponent
   }
@@ -52,7 +58,8 @@ const appRoutes: Routes = [
     HeroComponent,
     NavComponent,
     AddHeroComponent,
-    DynamicFormQuestionComponent
+    DynamicFormQuestionComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +71,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     FootballService, 
-    HeroService
+    HeroService,
+    QuestionControlService
   ],
   bootstrap: [AppComponent]
 })

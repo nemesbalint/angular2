@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-8 offset-2">
+        <form (ngSubmit)="onSubmit()" [formGroup]="form">
+            <app-question-control 
+            *ngFor="let question of questions" 
+            [question]="question" 
+            [form]="form"></app-question-control>
+        </form>
+    </div>
+    <div class="form-row">
+        <button class="btn btn-info" type="submit" [disabled]="!form.valid">save</button>
+    </div>
+</div>
+
+

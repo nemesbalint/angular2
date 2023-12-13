@@ -1,12 +1,12 @@
 <div class="form-group" [formGroup]="form">
     <label [attr.for]="question.key"> {{ question.label }} </label>
     <div [ngSwitch]="question.controlType">
-        <input 
+        <input class="form-control"
             *ngSwitchCase="'textbox'"
             [type]="question['type']"
             [formControlName]="question.key"
             [id]="question.key">
-        <select 
+        <select class="form-control"
             *ngSwitchCase="'dropdown'"
             [formControlName]="question.key"
             [id]="question.key">

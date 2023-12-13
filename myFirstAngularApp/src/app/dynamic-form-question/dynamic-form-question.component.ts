@@ -3,7 +3,7 @@ import { QuestionBase } from '../qform/question-base';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-question', //hogy kevesebbet kelljen írni
+  selector: 'app-question-control', //hogy kevesebbet kelljen írni
   templateUrl: './dynamic-form-question.component.html',
   styleUrl: './dynamic-form-question.component.css'
 })
