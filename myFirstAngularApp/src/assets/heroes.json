@@ -8,9 +8,9 @@
     },
     {
       "id": 10,
-      "name": "Jack",
-      "address": "BP",
-      "superpower": "biking"
+      "name": "Jack Doe",
+      "address": "San Francisco",
+      "superpower": "really smart"
     }
   ]
 }
