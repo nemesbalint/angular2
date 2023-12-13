@@ -19,8 +19,23 @@ export class HeroService {
     return this.http.get<Hero>( `${this.jsonUrl}/${id}` );
   }
 
-  add(hero: Hero): Observable<any> {
-    return this.http.post<Observable<any>>(this.jsonUrl, hero);
+  add(hero: Hero): Promise<any> {
+    return new Promise( (resolve, reject) => {
+      if (!hero.id) {
+        this.getAll().forEach( heroes => {
+          let id = heroes[heroes.length-1].id;
+          this.http.post<Observable<any>>(this.jsonUrl, hero)
+          .forEach( res => {
+            resolve("");
+          });
+        }); 
+      } else {
+        this.http.post<Observable<any>>(this.jsonUrl, hero)
+        .forEach( res => {
+          resolve("");
+        });
+    }
+    } );
   }
 
   remove(hero: any): Observable<any> {
