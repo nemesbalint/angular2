@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { HeroService } from './service/hero.service';
 import { HomeComponent } from './home/home.component';
 import { HeroComponent } from './hero/hero.component';
 import { NavComponent } from './nav/nav.component';
+import { AddHeroComponent } from './add-hero/add-hero.component';
 
 const appRoutes: Routes = [
   {
@@ -24,6 +25,10 @@ const appRoutes: Routes = [
   {
     path: "hero",
     component: HeroComponent
+  },
+  {
+    path: "hero/add",
+    component: AddHeroComponent
   },
   {
     path: "hero/:id",
@@ -44,14 +49,16 @@ const appRoutes: Routes = [
     HighlightDirective,
     HomeComponent,
     HeroComponent,
-    NavComponent
+    NavComponent,
+    AddHeroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     FootballService, 

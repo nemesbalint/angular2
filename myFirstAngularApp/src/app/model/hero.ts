@@ -4,3 +4,14 @@ export class Hero {
     address!: string;
     superpower!: string;
 }
+
+export class SuperPowers {
+    static list: string[] = [
+        "magnetic",
+        "bombastic",
+        "really smart",
+        "rich",
+        "hard",
+        "biking"
+    ]
+};
